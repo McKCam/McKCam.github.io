@@ -1,70 +1,161 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.collapsible {
-  background-color: #777;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.active, .collapsible:hover {
-  background-color: #555;
-}
-
-.content {
-  padding: 0 18px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: #f1f1f1;
-}
-</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<h2>Project Portfolio</h2>
-
-<button class="collapsible">Numerical Integration (Visualized)</button>
-<div class="content">
-    <a href="https://editor.p5js.org/McKCam/sketches/GWQ0XGAO2" target="_blank">Link to source code</a>
-    <br>
-    <!-- p5.js embedding -->
-    <iframe src="https://editor.p5js.org/McKCam/embed/GWQ0XGAO2" height="460" width="430"></iframe>
-  <p>This 335-line program calculates the area (or the Riemann sum) under the curve of a chosen mathematical function with given limits. The function's graph and the rectangles between the limits of integration get drawn to a canvas. There are 16 different functions to choose from with a sliding scale to zoom in and out of the graph.</p>
-</div>
-<button class="collapsible">Open Section 2</button>
-<div class="content">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-<button class="collapsible">Open Section 3</button>
-<div class="content">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    } 
-  });
-}
-</script>
-
+<div class="container">
+  <h2>McKenzie's Project Portfolio</h2>
+  <p>These projects are made in the online editor of <a href="https://p5js.org/" target="_blank">p5.js</a>, a JavaScript library for creative programming. The online editor allows me to embed and share these projects. </p>
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Pacer Exercise Data Visualization</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse">
+        <div class="panel-body">
+            <a href="https://editor.p5js.org/McKCam/sketches/aMBwnkoOt">Link to source code</a>
+            <br>
+            <iframe src="https://editor.p5js.org/McKCam/embed/aMBwnkoOt" width ="805" height="805"></iframe>
+            <p>This 200-line object-oriented program visualizes the exercise data that I collected from the Pacer app. The data collection spans over two and a half years. The program utilizes file output to grab the data from a CSV file. Bubble size is pre-determined by the number of steps for a given day. Under the bubbles section is an animated bar chart, which displays the bar at the same as its corresponding bubble. At the end of the animation, a summary gets printed. The frame rate can change via a slider, as well as a reset button can restart the animation. Over 1000 objects instantiated.</p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Numerical Integration Visualized</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+            <a href="https://editor.p5js.org/McKCam/sketches/GWQ0XGAO2" target="_blank">Link to source code</a>
+            <br>
+            <iframe src="https://editor.p5js.org/McKCam/embed/GWQ0XGAO2" height="460" width="430"></iframe>
+            <p>This program calculates the area (or the Riemann sum) under the curve of a chosen mathematical function with given limits. The function's graph and the rectangles between the limits of integration get drawn to a canvas. There are 16 different functions to choose from with a sliding scale on the lower left to zoom in and out of the graph.</p>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Multivariable Numerical Integration Visualization</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+          <a href="https://editor.p5js.org/McKCam/sketches/O338FPTnl" target="_blank">Link to source code</a>
+          <br>
+          <iframe src="https://editor.p5js.org/McKCam/embed/O338FPTnl" height="650" width="605"></iframe>
+          <p>My independent project for Professor Yarbrough's Fall 2020 MATH 2110 Calculus III course. A visualization of multivariable integeration of the function 2x + y via numerical methods. Uses WEBGL for 3D visuals. Has an orbit control feature to look at the volume from different perspectives and a zoom in/out slider. There is also a show function checkbox that shows the plane, as well as a slider below the checkbox to change the color of the plane.</p>
+        </div>
+      </div>
+    </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Queue Data Structure Visualization</a>
+          </h4>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse">
+          <div class="panel-body">
+            <a href="https://editor.p5js.org/McKCam/sketches/g8wMSvuRl" target="_blank">Link to source code</a>  
+            <br>
+            <iframe src="https://editor.p5js.org/McKCam/embed/g8wMSvuRl" width="404" height="404"></iframe>
+            <p>This program is an interactive visualization of the <b>queue</b>, similar to the stack program. A queue is a data structure that (like the stack) contains a collection of items and has two operations: enqueue and dequeue. Enqueue adds elements to the list sequentially, while dequeue removes the front-most item in the group. The queue's associative mnemonic is FIFO (First In, First Out). A real-world example of a queue is the check-out at a grocery store.</p>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Stack Data Structure Visualization</a>
+          </h4>
+        </div>
+        <div id="collapse5" class="panel-collapse collapse">
+          <div class="panel-body">
+            <a href="https://editor.p5js.org/McKCam/sketches/Vnt_leI44" target="_blank">Link to source code</a>  
+            <br>
+            <iframe src="https://editor.p5js.org/McKCam/embed/Vnt_leI44" width="404" height="404"></iframe>
+            <p>This program visualizes the behavior of the <b>stack</b>. A stack is a data structure that contains a collection of items with two primary operations: push and pop. Push adds an element to the top (or end) of the list (when the stack is not full). Pop removes the item from the same area (when it is not empty). Therefore, the following two mnemonics best describe stacks: FILO (First In, Last Out) and LIFO (Last In, First Out).</p>
+          </div>
+        </div>
+      </div>
+      <!--
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">Collapsible Group 6</a>
+          </h4>
+        </div>
+        <div id="collapse6" class="panel-collapse collapse">
+          <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">Collapsible Group 7</a>
+          </h4>
+        </div>
+        <div id="collapse7" class="panel-collapse collapse">
+          <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">Collapsible Group 8</a>
+          </h4>
+        </div>
+        <div id="collapse8" class="panel-collapse collapse">
+          <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">Collapsible Group 9</a>
+          </h4>
+        </div>
+        <div id="collapse9" class="panel-collapse collapse">
+          <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">Collapsible Group 10</a>
+          </h4>
+        </div>
+        <div id="collapse10" class="panel-collapse collapse">
+          <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+        </div>
+      </div>
+      -->
+    </div> 
+  </div>
+    
 </body>
 </html>
